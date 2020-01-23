@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import headerContainer from './containers/headerContainer.js'
-import camerasContainer from './containers/camerasContainer.js'
+import HeaderContainer from './containers/HeaderContainer.js'
+import CamerasContainer from './containers/HamerasContainer.js'
 
 function App() {
   return (
     <div>
-      <headerContainer />
-      <camerasContainer /> 
+      <HeaderContainer />
+      <CamerasContainer />
     </div>
   );
 }

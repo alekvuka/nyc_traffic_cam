@@ -1,4 +1,4 @@
-export default function manageCameras(state = {
+export default function ManageCameras(state = {
   cameras: [],
 }, action) {
   // switch (action.type) {

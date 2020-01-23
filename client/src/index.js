@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import manageCameras from './reducers/manageCameras.js'
+import ManageCameras from './reducers/ManageCameras.js'
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-const store = createStore(manageCameras)
+const store = createStore(ManageCameras)
 
 
 ReactDOM.render(
