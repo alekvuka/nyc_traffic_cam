@@ -1,8 +1,9 @@
-include 'pry'
+require 'pry'
 
 
 class AvenuesController < ApplicationController
   def all
-    binding.pry
+    @avenues = Avenue.all
+    render json: @avenues
   end
 end
