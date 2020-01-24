@@ -1,16 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import HeaderContainer from './containers/HeaderContainer.js'
-import CamerasContainer from './containers/HamerasContainer.js'
 
-function App() {
-  return (
-    <div>
-      <HeaderContainer />
-      <CamerasContainer />
-    </div>
-  );
+import React, { Component } from 'react';
+import HeaderContainer from './containers/HeaderContainer.js'
+import CamerasContainer from './containers/CamerasContainer.js'
+
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <HeaderContainer />
+      
+      </div>
+    );
+  }
 }
 
 export default App;
