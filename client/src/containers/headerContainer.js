@@ -5,20 +5,10 @@ import { connect } from 'react-redux'
 
 class HeaderContainer extends Component {
 
-  clickedOption = (choice, number=0) => {
-    if(choice === "avenue"){
-      getCameras(number)
-    }elseif(choice === "all") {
-      getAllCameras()
-    }else(choice === "reset"){
-      reset()
-    }
-  }
-
   render() {
     return (
       <div>
-        <AvenueOptions getAvenues={this.props.getAvenues} />
+        <AvenueOptions getAvenues={this.props.clickedOption} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
         <ResetButton reset={this.props.reset} />
       </div>
     )
@@ -28,7 +18,7 @@ class HeaderContainer extends Component {
 
 const mapDispatchToProps = dispatch => ({
   getAvenues: () => dispatch({ type: "GET_AVENUES" }),
-  getCameras: avenue => diptach({type: "GET_AVENUE", avenue}),
+  getCameras: (avenue) => dispatch({type: "GET_AVENUE", avenue}),
   getAllCameras: () => dispatch({ type: "GET_ALL_CAMERAS"}),
   reset: () => dispatch({type: "RESET"})
 })
