@@ -7,9 +7,10 @@ import * as serviceWorker from './serviceWorker';
 import ManageCameras from './reducers/ManageCameras.js'
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-const store = createStore(ManageCameras, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(ManageCameras, applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 ReactDOM.render(

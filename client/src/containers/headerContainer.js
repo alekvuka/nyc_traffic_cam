@@ -32,11 +32,10 @@ class HeaderContainer extends Component {
          })
        })
   }
-
 }
 
 const mapDispatchToProps = dispatch => ({
-  getCameras: (avenue) => dispatch({ type: "GET_CAMERAS", avenue}),
+  getCameras: (avenue) => dispatch({ type: "ADD_CAMERAS", avenue}),
   reset: () => dispatch({ type: "RESET"})
 })
 
