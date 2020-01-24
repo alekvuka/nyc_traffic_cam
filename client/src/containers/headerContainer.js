@@ -7,7 +7,7 @@ class HeaderContainer extends Component {
 
   constructor(props){
     super(props)
-    this.state = { avenues: []}
+    this.state = { avenues: [] }
   }
 
 
@@ -20,7 +20,17 @@ class HeaderContainer extends Component {
     )
   }
 
-  
+  conponentDidMount(){
+    // fetch('http://api.open-notify.org/astros.json')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.setState({
+    //       avenues: data.avenues
+    //     })
+    //   })
+  }
+
+
 
 }
 
