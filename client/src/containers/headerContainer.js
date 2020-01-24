@@ -20,14 +20,15 @@ class HeaderContainer extends Component {
     )
   }
 
-  conponentDidMount(){
-    // fetch('http://api.open-notify.org/astros.json')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     this.setState({
-    //       avenues: data.avenues
-    //     })
-    //   })
+  componentDidMount(){
+    //debugger
+     fetch('/avenues')
+       .then(response => response.json())
+       .then(data => {
+         this.setState({
+           avenues: data.avenues
+         })
+       })
   }
 
 
