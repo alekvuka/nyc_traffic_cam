@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 
 const AvenueOptions = props => {
   const avenues = props.avenues.map((avenue, index) => {
-    debugger
     return <button key={index} onClick={() => props.getCameras(avenue.id)}>{avenue.name}</button>;
   });
 

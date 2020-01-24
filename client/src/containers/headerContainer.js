@@ -14,7 +14,6 @@ class HeaderContainer extends Component {
     this.props.reset()
   }
 
-
   render() {
     return (
       <div>
@@ -25,7 +24,6 @@ class HeaderContainer extends Component {
   }
 
   componentDidMount(){
-
      fetch('/avenues')
        .then(response => response.json())
        .then(data => {
@@ -33,15 +31,12 @@ class HeaderContainer extends Component {
            avenues: data
          })
        })
-       //console.log(this.state)
   }
 
 }
 
 const mapDispatchToProps = dispatch => ({
-  getAvenues: () => dispatch({ type: "GET_AVENUES" }),
-  getCameras: (avenue) => dispatch({ type: "GET_AVENUE", avenue}),
-  getAllCameras: () => dispatch({ type: "GET_ALL_CAMERAS"}),
+  getCameras: (avenue) => dispatch({ type: "GET_CAMERAS", avenue}),
   reset: () => dispatch({ type: "RESET"})
 })
 
