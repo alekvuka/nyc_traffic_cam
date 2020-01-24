@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
-import avenueOptions from '../components/header/avenueOptions.js';
-import resetButton form '../components/header/resetButton.js';
+import AvenueOptions from '../components/header/avenueOptions.js';
+import ResetButton form '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
 
 class HeaderContainer extends Component {
+
+
+
   render() {
     return (
       <div>
-        <BandInput addBand={this.props.addBand}/>
-        <Bands bands={this.props.bands}/>
+        <AvenueOptions addBand={this.props.addBand}/>
+        <ResetButton bands={this.props.bands}/>
       </div>
     )
   }
+
 }
 
-const mapStateToProps = ({ bands }) => ({ bands })
 
-const mapDispatchToProps = dispatch => ({ addBand: band => dispatch({ type: "ADD_BAND", band }) })
 
-export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer)
+const mapDispatchToProps = dispatch => ({
+  getAvenues: () => dispatch({ type: "GET_AVENUES" }),
+  reset: () => dispatch({type: reset})
+
+})
+
+export default connect(null, mapDispatchToProps)(HeaderContainer)
