@@ -1,0 +1,2 @@
+class AvenuesController < ApplicationController
+end
