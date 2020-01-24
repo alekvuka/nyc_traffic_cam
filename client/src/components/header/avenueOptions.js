@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-import AvenueButton from './AvenueButton.js'
 
-class AvenueOptions extends Component {
 
-  render() {
-    return (
-      <div>
-      </div>
-    )
-  }
+const AvenueOptions = props => {
+  const avenues = props.avenues.map((avenue, index) => {
+    debugger
+    return <button key={index} onClick={() => props.getCameras(avenue.id)}>{avenue.name}</button>;
+  });
 
+  return (
+   <div>
+     {avenues}
+   </div>
+ );
 }
 
 

@@ -18,7 +18,7 @@ class HeaderContainer extends Component {
   render() {
     return (
       <div>
-        <AvenueOptions getAvenues={this.props.clickedOption} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
+        <AvenueOptions avenues={this.state.avenues} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
         <ResetButton reset={this.handleOnClick} />
       </div>
     )
@@ -29,23 +29,20 @@ class HeaderContainer extends Component {
      fetch('/avenues')
        .then(response => response.json())
        .then(data => {
-         debugger
          this.setState({
            avenues: data
          })
        })
-       debugger
+       //console.log(this.state)
   }
-
-
 
 }
 
 const mapDispatchToProps = dispatch => ({
   getAvenues: () => dispatch({ type: "GET_AVENUES" }),
-  getCameras: (avenue) => dispatch({type: "GET_AVENUE", avenue}),
+  getCameras: (avenue) => dispatch({ type: "GET_AVENUE", avenue}),
   getAllCameras: () => dispatch({ type: "GET_ALL_CAMERAS"}),
-  reset: () => dispatch({type: "RESET"})
+  reset: () => dispatch({ type: "RESET"})
 })
 
 export default connect(null, mapDispatchToProps)(HeaderContainer)
