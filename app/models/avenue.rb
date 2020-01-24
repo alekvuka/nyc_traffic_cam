@@ -1,0 +1,2 @@
+class Avenue < ApplicationRecord
+end
