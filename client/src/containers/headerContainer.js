@@ -5,6 +5,12 @@ import { connect } from 'react-redux'
 
 class HeaderContainer extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = { avenues: []}
+  }
+
+
   render() {
     return (
       <div>
@@ -13,6 +19,8 @@ class HeaderContainer extends Component {
       </div>
     )
   }
+
+  
 
 }
 
