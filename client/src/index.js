@@ -9,7 +9,8 @@ import ManageCameras from './reducers/ManageCameras.js'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-const store = createStore(ManageCameras)
+const store = createStore(ManageCameras,  /* preloadedState, */
++  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 ReactDOM.render(

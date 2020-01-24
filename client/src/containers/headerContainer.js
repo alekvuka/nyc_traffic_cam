@@ -10,25 +10,31 @@ class HeaderContainer extends Component {
     this.state = { avenues: [] }
   }
 
+  handleOnClick = event => {
+    this.props.reset()
+  }
+
 
   render() {
     return (
       <div>
         <AvenueOptions getAvenues={this.props.clickedOption} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
-        <ResetButton reset={this.props.reset} />
+        <ResetButton reset={this.handleOnClick} />
       </div>
     )
   }
 
   componentDidMount(){
-    //debugger
+
      fetch('/avenues')
        .then(response => response.json())
        .then(data => {
+         debugger
          this.setState({
-           avenues: data.avenues
+           avenues: data
          })
        })
+       debugger
   }
 
 
