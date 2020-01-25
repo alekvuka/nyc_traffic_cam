@@ -10,7 +10,7 @@ class CamerasContainer extends Component {
 
   renderCameras = () => {
     const cams = this.props.cameras.map((camera, index) => {
-       return <Camera key={index} description={camera.description} url={camera.url} />
+       return <Camera key={index} description={camera.description} url={camera.url} close={this.props.removeCam} />
     })
     return cams
   }
