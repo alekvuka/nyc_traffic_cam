@@ -11,10 +11,10 @@ export default function ManageCameras(state = {
       }
 
      case 'ADD_CAMERAS':
-      debugger
+     debugger
      return {
        ...state,
-       //cameras: cameras.conct(action.avenues),
+       cameras: state.cameras.concat(action.cameras),
        loading: false
      }
 

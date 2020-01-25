@@ -26,6 +26,7 @@ class HeaderContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  debugger 
   return {avenues: state.avenues}
 }
 
