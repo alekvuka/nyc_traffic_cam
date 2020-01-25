@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/cameras/:id', to: 'cameras#show'
   get '/avenues', to: 'avenues#all'
 
+  post '/request', to: 'avenues#add_request'
+
 end

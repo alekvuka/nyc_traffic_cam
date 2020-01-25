@@ -5,10 +5,10 @@ import Spinner from 'react-bootstrap/Spinner'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 
-const Request = props => {
+const RequestButton = props => {
   return (
-    <Button variant="warning" onClick={props.reset}>request new cameras</Button>
+    <Button variant="warning" onClick={props.postRequest}>request new avenues</Button>
   );
 };
 
-export default Request;
+export default RequestButton;

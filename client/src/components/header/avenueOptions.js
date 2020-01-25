@@ -5,7 +5,7 @@ import Spinner from 'react-bootstrap/Spinner'
 
 const AvenueOptions = props => {
   const avenues = props.avenues.map((avenue, index) => {
-    return <Button fluid key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button>;
+    return <Button key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button>;
   });
 
   return (

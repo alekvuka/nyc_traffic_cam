@@ -7,4 +7,8 @@ class AvenuesController < ApplicationController
     render json: @avenues, only: [:id, :name]
   end
 
+  def add_request
+    binding.pry
+  end
+
 end
