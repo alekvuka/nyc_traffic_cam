@@ -39,7 +39,7 @@ class Image extends Component {
 
         this.setState({
           url: this.props.url + Math.random()
-        }) 
+        })
 
     }
 
@@ -60,7 +60,7 @@ class Image extends Component {
   render() {
     return (
       <div>
-        <img src='http://207.251.86.238/cctv261.jpg?rand=0.3047425204596729' alt={this.props.desc} />
+        <img src={this.state.url} alt={this.props.desc} />
       </div>
     )
   }
