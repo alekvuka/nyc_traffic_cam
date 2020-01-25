@@ -4,17 +4,20 @@ export default function ManageCameras(state = {
    switch (action.type) {
 
      case 'ADD_AVENUES':
-
       return {
         ...state,
         avenues: action.avenues,
         loading: false
       }
-
       return state
 
      case 'ADD_CAMERAS':
-      return state
+     return {
+       ...state,
+       //cameras: cameras.conct(action.avenues),
+       loading: false
+     }
+     return state
 
      case 'RESET':
       return state
