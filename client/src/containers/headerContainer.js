@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AvenueOptions from '../components/header/AvenueOptions.js';
 import ResetButton from '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
+import { fetchAvenues } from '../actions/avenueActions'
 
 class HeaderContainer extends Component {
 
@@ -24,19 +25,14 @@ class HeaderContainer extends Component {
   }
 
   componentDidMount(){
-     fetch('/avenues')
-       .then(response => response.json())
-       .then(data => {
-         this.setState({
-           avenues: data
-         })
-       })
+     this.props.fetchAvenues()
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   getCameras: (avenue) => dispatch({ type: "ADD_CAMERAS", avenue}),
-  reset: () => dispatch({ type: "RESET"})
+  reset: () => dispatch({ type: "RESET"}),
+  fetchAvenues: () => dispatch(fetchAvenues())
 })
 
 export default connect(null, mapDispatchToProps)(HeaderContainer)
