@@ -6,11 +6,12 @@ import Image from './Image.js'
 class Camera extends Component {
 
   render() {
+    debugger
     return (
       <div>
         <Description text={this.props.description} />
-        <CloseButton close={this.props.close} />
-        <Image image={this.props.image} desc={this.props.description} />
+        <CloseButton removeCam={this.props.removeCam} id={this.props.url} />
+        <Image url={this.props.url} desc={this.props.description} />
       </div>
     )
   }

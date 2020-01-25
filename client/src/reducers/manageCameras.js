@@ -17,6 +17,10 @@ export default function ManageCameras(state = {
        loading: false
      }
 
+     case 'REMOVE_CAMERA':
+     debugger 
+      return state
+
      case 'RESET':
       return {
         ...state,

@@ -4,13 +4,9 @@ import { connect } from 'react-redux'
 
 class CamerasContainer extends Component {
 
-  handleOnClick = event => {
-    this.props.reset()
-  }
-
   renderCameras = () => {
     const cams = this.props.cameras.map((camera, index) => {
-       return <Camera key={index} description={camera.description} url={camera.url} close={this.props.removeCam} />
+       return <Camera key={index} description={camera.description} url={camera.url} removeCam={this.props.removeCam} />
     })
     return cams
   }
