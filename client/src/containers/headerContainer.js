@@ -6,11 +6,6 @@ import { fetchAvenues } from '../actions/avenueActions'
 
 class HeaderContainer extends Component {
 
-  constructor(props){
-    super(props)
-    this.state = { avenues: [] }
-  }
-
   handleOnClick = event => {
     this.props.reset()
   }
@@ -18,7 +13,7 @@ class HeaderContainer extends Component {
   render() {
     return (
       <div>
-        <AvenueOptions avenues={this.state.avenues} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
+        <AvenueOptions avenues={this.props.avenues} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
         <ResetButton reset={this.handleOnClick} />
       </div>
     )
@@ -29,10 +24,15 @@ class HeaderContainer extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {avenues: state.avenues}
+}
+
+
 const mapDispatchToProps = dispatch => ({
   getCameras: (avenue) => dispatch({ type: "ADD_CAMERAS", avenue}),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues())
 })
 
-export default connect(null, mapDispatchToProps)(HeaderContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)

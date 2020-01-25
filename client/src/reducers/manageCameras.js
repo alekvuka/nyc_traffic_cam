@@ -4,15 +4,22 @@ export default function ManageCameras(state = {
    switch (action.type) {
 
      case 'ADD_AVENUES':
-        debugger
+
+      return {
+        ...state,
+        avenues: action.avenues,
+        loading: false
+      }
+
+      return state
 
      case 'ADD_CAMERAS':
-       return { ...state, bands: [...state.bands, action.band] }
+      return state
 
      case 'RESET':
-        return state
+      return state
 
      default:
-       return state;
+      return state;
    }
 };
