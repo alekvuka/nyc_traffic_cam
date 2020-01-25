@@ -9,15 +9,15 @@ export default function ManageCameras(state = {
         avenues: action.avenues,
         loading: false
       }
-      return state
 
      case 'ADD_CAMERAS':
+      debugger
      return {
        ...state,
        //cameras: cameras.conct(action.avenues),
        loading: false
      }
-     return state
+
 
      case 'RESET':
       return state

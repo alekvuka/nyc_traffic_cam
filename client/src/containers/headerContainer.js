@@ -3,6 +3,7 @@ import AvenueOptions from '../components/header/AvenueOptions.js';
 import ResetButton from '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
 import { fetchAvenues } from '../actions/avenueActions'
+import { fetchCameras } from '../actions/cameraActions'
 
 class HeaderContainer extends Component {
 
@@ -13,7 +14,7 @@ class HeaderContainer extends Component {
   render() {
     return (
       <div>
-        <AvenueOptions avenues={this.props.avenues} getCameras={this.props.getCameras} getAllCameras={this.props.getAllCameras} />
+        <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} getAllCameras={this.props.getAllCameras} />
         <ResetButton reset={this.handleOnClick} />
       </div>
     )
@@ -30,7 +31,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
-  getCameras: (avenue) => dispatch({ type: "ADD_CAMERAS", avenue}),
+  fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues())
 })
