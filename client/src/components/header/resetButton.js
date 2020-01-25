@@ -4,9 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const ResetButton = props => {
   return (
-    <div>
-      <Button variant="danger" onClick={props.reset}>reset</Button>
-    </div>
+      <Button variant="danger" onClick={props.reset}>reset</Button> 
   );
 };
 

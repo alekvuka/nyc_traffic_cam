@@ -4,7 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const AvenueOptions = props => {
   const avenues = props.avenues.map((avenue, index) => {
-    return <Button key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button>;
+    return <Button fluid key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button>;
   });
 
   return (

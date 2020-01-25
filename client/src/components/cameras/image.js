@@ -34,7 +34,7 @@ class Image extends Component {
   render() {
     return (
       <div>
-        <img variant="top" src={this.state.url} alt={this.props.desc} />
+        <img src={this.state.url} alt={this.props.desc} height='320' width='400' />
       </div>
     )
   }
