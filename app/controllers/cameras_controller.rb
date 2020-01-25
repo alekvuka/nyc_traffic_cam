@@ -8,8 +8,7 @@ class CamerasController < ApplicationController
   end
 
   def show
-    binding.pry
-    @cameras = Camera.find_by(avenue: params[:id])
+    @cameras = Avenue.find(params[:id]).cameras
     render json: @cameras, only: [:description, :url]
   end
 
