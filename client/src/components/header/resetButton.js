@@ -5,7 +5,9 @@ import Spinner from 'react-bootstrap/Spinner'
 
 const ResetButton = props => {
   return (
+    <ButtonGroup>
       <Button variant="danger" onClick={props.reset}>reset</Button>
+    </ButtonGroup>
   );
 };
 

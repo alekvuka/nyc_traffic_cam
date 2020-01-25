@@ -9,6 +9,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Container from 'react-bootstrap/Container'
 import Spinner from 'react-bootstrap/Spinner'
+import Request from '../components/header/Request.js'
 
 class HeaderContainer extends Component {
 
@@ -18,10 +19,13 @@ class HeaderContainer extends Component {
 
   render() {
     return (
+      <div>
         <ButtonToolbar>
           <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} getAllCameras={this.props.getAllCameras} />
           <ResetButton reset={this.handleOnClick} />
+          <Request />
         </ButtonToolbar>
+      </div>
     )
   }
 
