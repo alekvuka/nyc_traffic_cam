@@ -10,7 +10,7 @@ class Camera extends Component {
       <div>
         <Description text={this.props.description} />
         <CloseButton close={this.props.close} />
-        <Image image={this.props.image} />
+        <Image image={this.props.image} desc={this.props.description} />
       </div>
     )
   }

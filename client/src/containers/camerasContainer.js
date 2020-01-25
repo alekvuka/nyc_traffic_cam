@@ -25,7 +25,6 @@ class CamerasContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  debugger
   return {
     cameras: state.cameras
   }
