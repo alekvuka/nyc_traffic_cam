@@ -21,9 +21,9 @@ class HeaderContainer extends Component {
     return (
       <div>
         <ButtonToolbar>
-          <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} getAllCameras={this.props.getAllCameras} />
+          <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} />
           <ResetButton reset={this.handleOnClick} />
-          <Request />
+          <Request postRequest={this.props.postRequest}/>
         </ButtonToolbar>
       </div>
     )
@@ -42,7 +42,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
-  fetchAvenues: () => dispatch(fetchAvenues())
+  fetchAvenues: () => dispatch(fetchAvenues()),
+  postRequest: (request) => dispatch(postRequest(request))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)
