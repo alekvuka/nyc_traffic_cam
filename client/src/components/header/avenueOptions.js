@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-
+import React from 'react';
 
 const AvenueOptions = props => {
   const avenues = props.avenues.map((avenue, index) => {

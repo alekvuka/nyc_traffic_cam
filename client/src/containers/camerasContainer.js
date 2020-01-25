@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Camera from '../components/cameras/camera.js';
+import Camera from '../components/cameras/Camera.js';
 import { connect } from 'react-redux'
 
 class CamerasContainer extends Component {
@@ -8,16 +8,26 @@ class CamerasContainer extends Component {
     this.props.reset()
   }
 
+  renderCameras = () => {
+    const cams = this.props.cameras.map((camera, index) => {
+       return <Camera key={index} description={camera.description} url={camera.url} />
+    })
+    return cams
+  }
+
+
+
   render() {
     return (
       <div>
-
+      {this.renderCameras()}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
+  debugger
   return {
     cameras: state.cameras
   }
