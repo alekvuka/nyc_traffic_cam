@@ -1,15 +1,10 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const CloseButton = props => {
 
-  //const ids = props.id
-
-  //debugger
-
   return (
-    <div>
-      <button onClick={() => props.removeCam(props.id)}>X</button>
-    </div>
+      <Button variant="danger" onClick={() => props.removeCam(props.id)}>X</Button>
   );
 };
 

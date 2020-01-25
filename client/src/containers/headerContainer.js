@@ -4,6 +4,10 @@ import ResetButton from '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
 import { fetchAvenues } from '../actions/avenueActions'
 import { fetchCameras } from '../actions/cameraActions'
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import Container from 'react-bootstrap/Container'
 
 class HeaderContainer extends Component {
 
@@ -13,10 +17,10 @@ class HeaderContainer extends Component {
 
   render() {
     return (
-      <div>
-        <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} getAllCameras={this.props.getAllCameras} />
-        <ResetButton reset={this.handleOnClick} />
-      </div>
+        <ButtonToolbar>
+          <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} getAllCameras={this.props.getAllCameras} />
+          <ResetButton reset={this.handleOnClick} />
+        </ButtonToolbar>
     )
   }
 

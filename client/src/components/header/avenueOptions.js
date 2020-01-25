@@ -1,13 +1,17 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const AvenueOptions = props => {
   const avenues = props.avenues.map((avenue, index) => {
-    return <button key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</button>;
+    return <Button key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button>;
   });
 
   return (
    <div>
-     {avenues}
+    <ButtonGroup>
+      {avenues}
+    </ButtonGroup>
    </div>
  );
 }

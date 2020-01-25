@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ResetButton = props => {
+const Description = props => {
   return (
     <div>
       <p>{props.text}</p>
@@ -8,4 +8,4 @@ const ResetButton = props => {
   );
 };
 
-export default ResetButton;
+export default Description;
