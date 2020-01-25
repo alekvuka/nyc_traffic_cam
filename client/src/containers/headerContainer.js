@@ -14,9 +14,32 @@ import { postRequest } from '../actions/requestActions'
 
 class HeaderContainer extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      displayInputForm: false
+    }
+  }
+
   handleOnClick = event => {
     this.props.reset()
   }
+
+  checkDisplayInputForm = () => {
+    debugger
+    if(this.state.displayInputForm === true){
+      this.props.reset()
+      return(<h1>I work</h1>)
+    }
+  }
+
+  changeDisplayInputForm = () => {
+    this.setState({
+      displayInputForm: true
+    })
+  }
+
+
 
   render() {
     return (
@@ -24,8 +47,10 @@ class HeaderContainer extends Component {
         <ButtonToolbar>
           <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} />
           <ResetButton reset={this.handleOnClick} />
-          <RequestButton postRequest={this.props.postRequest}/>
+          <RequestButton displayInputForm={this.changeDisplayInputForm}/>
         </ButtonToolbar>
+        {this.checkDisplayInputForm()}
+
       </div>
     )
   }
@@ -44,7 +69,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues()),
-  postRequest: (request) => dispatch(postRequest(request))
+  //postRequest: (request) => dispatch(postRequest(request))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)
