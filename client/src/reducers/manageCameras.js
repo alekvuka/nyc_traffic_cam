@@ -18,7 +18,11 @@ export default function ManageCameras(state = {
      }
 
      case 'RESET':
-      return state
+      return {
+        ...state,
+        cameras: [],
+        loading: false
+      }
 
      default:
       return state;

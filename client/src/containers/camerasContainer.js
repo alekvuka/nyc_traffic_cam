@@ -15,8 +15,6 @@ class CamerasContainer extends Component {
     return cams
   }
 
-
-
   render() {
     return (
       <div>

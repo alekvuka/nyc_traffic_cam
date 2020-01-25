@@ -5,7 +5,6 @@ import Image from './Image.js'
 
 class Camera extends Component {
 
-
   render() {
     return (
       <div>
@@ -15,7 +14,6 @@ class Camera extends Component {
       </div>
     )
   }
-
 }
 
 export default Camera
