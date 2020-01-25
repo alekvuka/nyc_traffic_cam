@@ -6,7 +6,6 @@ import Image from './Image.js'
 class Camera extends Component {
 
   render() {
-    debugger
     return (
       <div>
         <Description text={this.props.description} />

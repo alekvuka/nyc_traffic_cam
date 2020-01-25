@@ -27,7 +27,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  removeCam: (id) => dispatch({ type: "REMOVE_CAMERA", id})
+  removeCam: (url) => dispatch({ type: "REMOVE_CAMERA", url})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CamerasContainer)

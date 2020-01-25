@@ -18,8 +18,12 @@ export default function ManageCameras(state = {
      }
 
      case 'REMOVE_CAMERA':
-     debugger 
-      return state
+      const cams = state.cameras.filter(camera => camera.url !== action.url)
+      return {
+        ...state,
+        cameras: cams,
+        loading: false
+      }
 
      case 'RESET':
       return {
