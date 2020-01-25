@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Camera from '../components/cameras/Camera.js';
 import { connect } from 'react-redux'
+import Container from 'react-bootstrap/Container'
 
 class CamerasContainer extends Component {
 
@@ -13,9 +14,9 @@ class CamerasContainer extends Component {
 
   render() {
     return (
-      <div>
-      {this.renderCameras()}
-      </div>
+      <Container fluid>
+        {this.renderCameras()}
+      </Container>
     )
   }
 }

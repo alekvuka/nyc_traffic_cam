@@ -23,12 +23,10 @@ class Camera extends Component {
 
 
 
-      <Jumbotron fluid>
-        <Container>
+      <Jumbotron>
            <Description text={this.props.description} />
            <CloseButton removeCam={this.props.removeCam} id={this.props.url} />
            <Image url={this.props.url} desc={this.props.description} />
-        </Container>
      </Jumbotron>
 
 

@@ -13,7 +13,7 @@ export default function ManageCameras(state = {
      case 'ADD_CAMERAS':
      return {
        ...state,
-       cameras: state.cameras.concat(action.cameras),
+       cameras: action.cameras,
        loading: false
      }
 
