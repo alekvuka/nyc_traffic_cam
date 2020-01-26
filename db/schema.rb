@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_030249) do
+ActiveRecord::Schema.define(version: 2020_01_26_010651) do
 
   create_table "avenues", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 2020_01_24_030249) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["avenue_id"], name: "index_cameras_on_avenue_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string "text"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
