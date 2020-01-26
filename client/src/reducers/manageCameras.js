@@ -28,7 +28,6 @@ export default function ManageCameras(state = {
       }
 
     case 'REQUEST_SENT':
-      debugger
       return {
         ...state,
         requestCreated: action.data,

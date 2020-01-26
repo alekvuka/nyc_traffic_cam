@@ -5,42 +5,21 @@ import Image from './Image.js'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
+import DisplayAlert from '../header/DisplayAlert.js'
 
 class Camera extends Component {
 
+  sendAlert = () => {
+  return  <DisplayAlert />
+  }
+
   render() {
     return (
-
-      // <Card className="text-center">
-      //   <Image url={this.props.url} desc={this.props.description} />
-      //   <Card.Body>
-      //     <Card.Text>
-      //       <Description text={this.props.description} />
-      //     </Card.Text>
-      //   </Card.Body>
-      // </Card>
-
-
-
-
       <Jumbotron>
            <Description text={this.props.description} />
-           <CloseButton removeCam={this.props.removeCam} id={this.props.url} />
+           <CloseButton removeCam={this.props.removeCam} id={this.props.url} sendAlert={this.sendAlert} />
            <Image url={this.props.url} desc={this.props.description} />
      </Jumbotron>
-
-
-
-
-
-
-
-
-      // <div>
-      //   <Description text={this.props.description} />
-      //   <CloseButton removeCam={this.props.removeCam} id={this.props.url} />
-      //   <Image url={this.props.url} desc={this.props.description} />
-      // </div>
     )
   }
 }

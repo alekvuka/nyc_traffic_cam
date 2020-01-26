@@ -25,6 +25,9 @@ class HeaderContainer extends Component {
 
   handleOnClick = event => {
     this.props.reset()
+    this.setState({
+      displayInputForm: false
+    })
     return(<div><InputForm /></div>)
   }
 
@@ -42,9 +45,9 @@ class HeaderContainer extends Component {
   }
 
   checkAlert = () => {
-    debugger
     if(this.props.requestSent===true){
-      return <DisplayAlert text={this.props.requestCreated.text} />
+      const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
+      return <DisplayAlert text={txt} />
     }
   }
 

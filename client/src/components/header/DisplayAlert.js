@@ -23,11 +23,10 @@ class DisplayAlert extends Component {
 
   shouldDisplay = () => {
     if(this.state.userSaw===false){
-      return (<Alert variant={'success'}>
-          Your request for {this.props.text} was succesfully submitted!
+      return (<Alert variant={'warning'}>
+          {this.props.text} 
       </Alert>)
     }
-
   }
 
   render(){
@@ -47,9 +46,6 @@ class DisplayAlert extends Component {
   componentWillUnmount(){
     clearInterval(this.timerID)
   }
-
-
-
 
 };
 
