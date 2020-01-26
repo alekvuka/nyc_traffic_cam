@@ -9,14 +9,16 @@ export default function ManageCameras(state = {
         avenues: action.avenues,
         loading: false,
         requestSent: false,
-        requestCreated: ""
+        requestCreated: "",
+        displayInputForm: true
       }
 
      case 'ADD_CAMERAS':
      return {
        ...state,
        cameras: action.cameras,
-       loading: false
+       loading: false,
+       displayInputForm: false
      }
 
      case 'REMOVE_CAMERA':
@@ -26,6 +28,22 @@ export default function ManageCameras(state = {
         cameras: cams,
         loading: false
       }
+
+    case "SET_DISPLAY_TO_FALSE":
+      return {
+        ...state,
+        displayInputForm: false
+      }
+
+    case "SET_DISPLAY_TO_TRUE":
+    debugger
+      return {
+        ...state,
+        displayInputForm: true
+      }
+
+
+
 
     case 'REQUEST_SENT':
       return {
@@ -38,7 +56,8 @@ export default function ManageCameras(state = {
       return {
         ...state,
         cameras: [],
-        loading: false
+        loading: false,
+        displayInputForm: false
       }
 
      default:

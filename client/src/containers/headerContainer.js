@@ -28,10 +28,12 @@ class HeaderContainer extends Component {
     this.setState({
       displayInputForm: false
     })
-    return(<div><InputForm /></div>)
+    //return(<div><InputForm /></div>)
   }
 
-  checkDisplayInputForm = () => {
+  
+
+  checkInputForm = () => {
     if(this.state.displayInputForm === true){
       this.props.reset()
       return <InputForm requestSent={this.props.requestSent} requestCreated={this.props.requestCreated} postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
@@ -55,11 +57,11 @@ class HeaderContainer extends Component {
     return (
       <div>
         <ButtonToolbar>
-          <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} />
+          <AvenueOptions avenues={this.props.avenues} fetchCameras={this.props.fetchCameras} handleOptionClick={this.handleOptionClick}/>
           <ResetButton reset={this.handleOnClick} />
           <RequestButton displayInputForm={this.changeDisplayInputForm}/>
         </ButtonToolbar>
-        {this.checkDisplayInputForm()}
+        {this.checkInputForm()}
         {this.checkAlert()}
       </div>
     )
@@ -74,12 +76,14 @@ const mapStateToProps = state => {
   return {
     avenues: state.avenues,
     requestSent: state.requestSent,
-    requestCreated: state.requestCreated
+    requestCreated: state.requestCreated,
+    displayForm: state.displayInputForm
   }
 }
 
-
 const mapDispatchToProps = dispatch => ({
+  displayInput: () => dispatch( {type: "SET_DISPLAY_TO_TRUE"}),
+  hideInput: () => dispatch( {type: "SET_DISPLAY_TO_FALSE"}),
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues()),

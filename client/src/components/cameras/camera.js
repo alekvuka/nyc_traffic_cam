@@ -9,15 +9,11 @@ import DisplayAlert from '../header/DisplayAlert.js'
 
 class Camera extends Component {
 
-  sendAlert = () => {
-  return  <DisplayAlert />
-  }
-
   render() {
     return (
       <Jumbotron>
            <Description text={this.props.description} />
-           <CloseButton removeCam={this.props.removeCam} id={this.props.url} sendAlert={this.sendAlert} />
+           <CloseButton text={this.props.description} closureAlert={this.sendAlert} removeCam={this.props.removeCam} id={this.props.url} sendAlert={this.props.displayAlert} />
            <Image url={this.props.url} desc={this.props.description} />
      </Jumbotron>
     )

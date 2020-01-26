@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 
 const CloseButton = props => {
 
+  const txt = props.text
+
   return (
 
     <div>
