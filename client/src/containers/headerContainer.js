@@ -30,13 +30,13 @@ class HeaderContainer extends Component {
   checkDisplayInputForm = () => {
     if(this.state.displayInputForm === true){
       this.props.reset()
-      return <InputForm />
+      return <InputForm postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
     }
   }
 
   changeDisplayInputForm = () => {
     this.setState({
-      displayInputForm: true
+      displayInputForm: !this.state.displayInputForm
     })
   }
 
@@ -68,7 +68,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues()),
-  //postRequest: (request) => dispatch(postRequest(request))
+  postRequest: (request) => dispatch(postRequest(request))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)

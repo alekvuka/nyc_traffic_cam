@@ -1,4 +1,3 @@
-
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Spinner from 'react-bootstrap/Spinner'
@@ -15,7 +14,7 @@ class InputForm extends Component {
     }
   }
 
-  updateSubmission = (event) => {
+  handleOnChange = (event) => {
     if(event.target.id === "email"){
       this.setState({
         ...this.state,
@@ -29,17 +28,31 @@ class InputForm extends Component {
     }
   }
 
+  postSubmit = () => {
+    this.props.postRequest(this.state);
+  }
+
+  handleOnSubmit(event) {
+    event.preventDefault();
+    this.props.postRequest(this.state);
+    this.props.displayInputForm()
+    this.setState({
+      request: '',
+      email: '',
+    });
+
+  }
 
   render() {
   return (
-    <Form>
+    <Form onSubmit={(event) => this.handleOnSubmit(event)}>
       <Form.Group >
         <Form.Label>Enter your email </Form.Label>
-        <Form.Control id="email" onChange={this.updateSubmission} placeholder="email" />
+        <Form.Control id="email" onChange={this.handleOnChange} placeholder="email" />
       </Form.Group>
       <Form.Group >
         <Form.Label>Enter your avenue request</Form.Label>
-        <Form.Control id="request" onChange={this.updateSubmission} placeholder="avenue" />
+        <Form.Control id="request" onChange={this.handleOnChange} placeholder="avenue" />
       </Form.Group>
       <Button variant="primary" type="submit">Submit</Button>
    </Form>
