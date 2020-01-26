@@ -8,7 +8,8 @@ class AvenuesController < ApplicationController
   end
 
   def add_request
-    binding.pry
+    @request = Request.create(text: params[:request], email: params[:email])
+    render json: @request
   end
 
 end

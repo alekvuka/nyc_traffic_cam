@@ -1,7 +1,5 @@
 export const postRequest = (req) => {
 
-  //debugger
-
    return (dispatch) => {
      dispatch({ type: 'SENDING_REQUEST'})
      fetch(`/request`, {
