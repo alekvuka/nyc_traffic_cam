@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 
 const RequestButton = props => {
-  debugger
+  
   return (
     <Button variant="warning" onClick={props.displayInputForm}>request new avenues</Button>
   );
