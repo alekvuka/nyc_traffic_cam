@@ -25,6 +25,9 @@ export default function ManageCameras(state = {
         loading: false
       }
 
+    case 'REQUEST_SENT':
+      debugger 
+
      case 'RESET':
       return {
         ...state,

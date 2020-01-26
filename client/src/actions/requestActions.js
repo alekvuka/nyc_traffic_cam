@@ -13,7 +13,7 @@ export const postRequest = (req) => {
      }).then(response => {
        return response.json()
      }).then(data => {
-       dispatch({ type: 'REQUEST_SENT' })
+       dispatch({ type: 'REQUEST_SENT', data })
      }).catch((error) => {
          console.error('Error:', error);
        });
