@@ -30,7 +30,7 @@ class HeaderContainer extends Component {
   checkDisplayInputForm = () => {
     if(this.state.displayInputForm === true){
       this.props.reset()
-      return <InputForm postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
+      return <InputForm requestSent={this.props.requestSent} requestCreated={this.props.requestCreated} postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
     }
   }
 
@@ -60,7 +60,11 @@ class HeaderContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {avenues: state.avenues}
+  return {
+    avenues: state.avenues,
+    requestSent: state.requestSend,
+    requestCreated: state.requestCreated
+  }
 }
 
 
