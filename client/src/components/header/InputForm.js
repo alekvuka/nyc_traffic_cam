@@ -40,7 +40,6 @@ class InputForm extends Component {
       request: '',
       email: '',
     });
-
   }
 
   render() {

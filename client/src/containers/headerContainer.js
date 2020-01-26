@@ -12,6 +12,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import RequestButton from '../components/header/RequestButton.js'
 import { postRequest } from '../actions/requestActions'
 import InputForm from '../components/header/InputForm.js'
+import DisplayAlert from '../components/header/DisplayAlert.js'
 
 class HeaderContainer extends Component {
 
@@ -40,6 +41,13 @@ class HeaderContainer extends Component {
     })
   }
 
+  checkAlert = () => {
+    debugger
+    if(this.props.requestSent===true){
+      return <DisplayAlert text={this.props.requestCreated.text} />
+    }
+  }
+
   render() {
     return (
       <div>
@@ -49,7 +57,7 @@ class HeaderContainer extends Component {
           <RequestButton displayInputForm={this.changeDisplayInputForm}/>
         </ButtonToolbar>
         {this.checkDisplayInputForm()}
-
+        {this.checkAlert()}
       </div>
     )
   }
@@ -62,7 +70,7 @@ class HeaderContainer extends Component {
 const mapStateToProps = state => {
   return {
     avenues: state.avenues,
-    requestSent: state.requestSend,
+    requestSent: state.requestSent,
     requestCreated: state.requestCreated
   }
 }
