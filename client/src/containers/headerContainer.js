@@ -48,13 +48,10 @@ class HeaderContainer extends Component {
   // }
 
   checkAlert = () => {
-    //debugger
     if(this.props.requestSent===true){
       this.props.requestConfirmationSeen()
-      debugger
       const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
       return  (<div><DisplayAlert text={txt} /> <Redirect to="/" /></div>)
-      //<Redirect to="/" />
     }
   }
 

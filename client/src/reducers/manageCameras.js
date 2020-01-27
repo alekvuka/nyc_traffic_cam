@@ -41,7 +41,6 @@ export default function ManageCameras(state = {
         displayInputForm: true
       }
 
-
     case 'REQUEST_SENT':
       return {
         ...state,
