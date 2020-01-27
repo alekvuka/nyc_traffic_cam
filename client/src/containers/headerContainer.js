@@ -4,16 +4,12 @@ import ResetButton from '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
 import { fetchAvenues } from '../actions/avenueActions'
 import { fetchCameras } from '../actions/cameraActions'
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import Container from 'react-bootstrap/Container'
-import Spinner from 'react-bootstrap/Spinner'
 import RequestButton from '../components/header/RequestButton.js'
 import { postRequest } from '../actions/requestActions'
 //import InputForm from '../components/header/InputForm.js'
 import DisplayAlert from '../components/header/DisplayAlert.js'
-import { Redirect, Route, Switch } from "react-router";
+import { Redirect } from "react-router";
 
 
 class HeaderContainer extends Component {
