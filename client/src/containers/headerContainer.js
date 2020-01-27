@@ -11,8 +11,9 @@ import Container from 'react-bootstrap/Container'
 import Spinner from 'react-bootstrap/Spinner'
 import RequestButton from '../components/header/RequestButton.js'
 import { postRequest } from '../actions/requestActions'
-import InputForm from '../components/header/InputForm.js'
+//import InputForm from '../components/header/InputForm.js'
 import DisplayAlert from '../components/header/DisplayAlert.js'
+import { Redirect, Route, Switch } from "react-router";
 
 class HeaderContainer extends Component {
 
@@ -23,33 +24,37 @@ class HeaderContainer extends Component {
     }
   }
 
-  handleOnClick = event => {
-    this.props.reset()
-    this.setState({
-      displayInputForm: false
-    })
-    //return(<div><InputForm /></div>)
-  }
+  // handleOnClick = event => {
+  //   this.props.reset()
+  //   this.setState({
+  //     displayInputForm: false
+  //   })
+  //   //return(<div><InputForm /></div>)
+  // }
 
-  
 
-  checkInputForm = () => {
-    if(this.state.displayInputForm === true){
-      this.props.reset()
-      return <InputForm requestSent={this.props.requestSent} requestCreated={this.props.requestCreated} postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
-    }
-  }
 
-  changeDisplayInputForm = () => {
-    this.setState({
-      displayInputForm: !this.state.displayInputForm
-    })
-  }
+  // checkInputForm = () => {
+  //   if(this.state.displayInputForm === true){
+  //     this.props.reset()
+  //     return <InputForm requestSent={this.props.requestSent} requestCreated={this.props.requestCreated} postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
+  //   }
+  // }
+
+  // changeDisplayInputForm = () => {
+  //   this.setState({
+  //     displayInputForm: !this.state.displayInputForm
+  //   })
+  // }
 
   checkAlert = () => {
+    //debugger
     if(this.props.requestSent===true){
+      this.props.requestConfirmationSeen()
+      debugger
       const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
-      return <DisplayAlert text={txt} />
+      return  (<div><DisplayAlert text={txt} /> <Redirect to="/" /></div>)
+      //<Redirect to="/" />
     }
   }
 
@@ -61,11 +66,12 @@ class HeaderContainer extends Component {
           <ResetButton reset={this.handleOnClick} />
           <RequestButton displayInputForm={this.changeDisplayInputForm}/>
         </ButtonToolbar>
-        {this.checkInputForm()}
         {this.checkAlert()}
       </div>
     )
   }
+
+//{//this.checkInputForm()}
 
   componentDidMount(){
      this.props.fetchAvenues()
@@ -82,6 +88,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
+  requestConfirmationSeen: () => dispatch ({type: "REQUEST_CONFIRMATION_SEEN"}),
   displayInput: () => dispatch( {type: "SET_DISPLAY_TO_TRUE"}),
   hideInput: () => dispatch( {type: "SET_DISPLAY_TO_FALSE"}),
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),

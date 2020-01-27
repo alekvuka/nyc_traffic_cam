@@ -36,13 +36,10 @@ export default function ManageCameras(state = {
       }
 
     case "SET_DISPLAY_TO_TRUE":
-    debugger
       return {
         ...state,
         displayInputForm: true
       }
-
-
 
 
     case 'REQUEST_SENT':
@@ -50,6 +47,12 @@ export default function ManageCameras(state = {
         ...state,
         requestCreated: action.data,
         requestSent: true
+      }
+
+    case "REQUEST_CONFIRMATION_SEEN":
+      return {
+        ...state,
+        requestSent: false
       }
 
      case 'RESET':
