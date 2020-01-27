@@ -1,11 +1,8 @@
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Spinner from 'react-bootstrap/Spinner'
 import Form from 'react-bootstrap/Form'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { postRequest } from '../actions/requestActions'
-import { NavLink } from 'react-router-dom';
 
 class InputForm extends Component {
 
