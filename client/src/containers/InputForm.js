@@ -1,5 +1,3 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { postRequest } from '../actions/requestActions'
