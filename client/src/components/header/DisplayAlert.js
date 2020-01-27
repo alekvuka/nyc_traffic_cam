@@ -2,11 +2,11 @@ import Alert from 'react-bootstrap/Alert'
 import React, { Component } from 'react'
 
 class DisplayAlert extends Component {
-  //
+
   constructor(props){
     super()
     this.state = {
-        userSaw: false
+        userSawAlert: false
     }
   }
 
@@ -14,30 +14,21 @@ class DisplayAlert extends Component {
     this.setState({
       userSaw: true
     })
-    //const history = useHistory()
-    //this.props.history.push("/")
-    //history.pushState('/')
-    //window.history.pushState({hello: ""}, '', '/')
-
   }
 
   shouldDisplay = () => {
-    //if(this.state.userSaw===false){
-      return(
-        <div>
-        <Alert variant={'warning'}>
-          {this.props.text}
-       </Alert>
-
-       </div>
-     )
-    //}
+    if(this.state.userSaw === false){
+      debugger
+      return <Alert variant={'warning'}> {this.props.text}</Alert>
+    }else{
+      return <div></div>
+    }
   }
 
   render(){
     return(
       <div>
-        {this.shouldDisplay()}
+          {this.shouldDisplay()}
       </div>
     )}
 
