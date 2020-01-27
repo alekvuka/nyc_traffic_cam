@@ -3,9 +3,6 @@ import Description from './Description.js'
 import CloseButton from './CloseButton.js'
 import Image from './Image.js'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import Container from 'react-bootstrap/Container'
-import Card from 'react-bootstrap/Card'
-import DisplayAlert from '../header/DisplayAlert.js'
 
 class Camera extends Component {
 
