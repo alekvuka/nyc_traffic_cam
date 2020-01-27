@@ -16,14 +16,16 @@ const AvenueOptions = props => {
 
 
   const avenues = props.avenues.map((avenue, index) => {
-    return <NavLink to='/cameras'><Button key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button></NavLink>;
+    return <Button key={index} onClick={() => props.fetchCameras(avenue.id)}>{avenue.name}</Button>;
   });
 
   return (
    <div>
+   <NavLink to='/cameras'>
     <ButtonGroup>
       {avenues}
     </ButtonGroup>
+    </NavLink>
    </div>
  );
 }

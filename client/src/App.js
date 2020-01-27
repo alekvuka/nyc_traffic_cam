@@ -6,17 +6,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import InputForm from './containers/InputForm.js'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import HomePage from './containers/HomePage.js'
 
 class App extends Component {
 
-  renderCameraRoutes = () => {
-    const aveRoutes = this.props.avenues.map(avenue => {
-      //debugger
-      return <Route path={"/cameras" + avenue.name.replace(/\s/g,'')} component={CamerasContainer} />
-    })
-    debugger
-    return aveRoutes
-  }
+  // renderCameraRoutes = () => {
+  //   const aveRoutes = this.props.avenues.map(avenue => {
+  //     //debugger
+  //     return <Route path={"/cameras" + avenue.name.replace(/\s/g,'')} component={CamerasContainer} />
+  //   })
+  //   debugger
+  //   return aveRoutes
+  // }
 
 
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <HeaderContainer />
             <Route path="/request" component={InputForm} />
             <Route path="/cameras" component={CamerasContainer} />
+            <Route exact path='/' component={HomePage}/>
         </Router>
 
     );
@@ -38,7 +40,6 @@ const mapStateToProps = state => {
     avenues: state.avenues
   }
 }
-
 
 export default connect(mapStateToProps)(App)
 //<HeaderContainer />

@@ -15,6 +15,7 @@ import { postRequest } from '../actions/requestActions'
 import DisplayAlert from '../components/header/DisplayAlert.js'
 import { Redirect, Route, Switch } from "react-router";
 
+
 class HeaderContainer extends Component {
 
   constructor(props) {
