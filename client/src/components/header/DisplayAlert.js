@@ -1,7 +1,5 @@
 import Alert from 'react-bootstrap/Alert'
 import React, { Component } from 'react'
-import { useHistory } from "react-router-dom";
-import { Redirect, Route, Switch } from "react-router";
 
 class DisplayAlert extends Component {
   //
