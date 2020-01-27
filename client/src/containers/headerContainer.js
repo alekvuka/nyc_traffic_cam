@@ -7,42 +7,13 @@ import { fetchCameras } from '../actions/cameraActions'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import RequestButton from '../components/header/RequestButton.js'
 import { postRequest } from '../actions/requestActions'
-//import InputForm from '../components/header/InputForm.js'
 import DisplayAlert from '../components/header/DisplayAlert.js'
 import { Redirect } from "react-router";
 
 
 class HeaderContainer extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      displayInputForm: false
-    }
-  }
-
-  // handleOnClick = event => {
-  //   this.props.reset()
-  //   this.setState({
-  //     displayInputForm: false
-  //   })
-  //   //return(<div><InputForm /></div>)
-  // }
-
-
-
-  // checkInputForm = () => {
-  //   if(this.state.displayInputForm === true){
-  //     this.props.reset()
-  //     return <InputForm requestSent={this.props.requestSent} requestCreated={this.props.requestCreated} postRequest={this.props.postRequest} displayInputForm={this.changeDisplayInputForm} />
-  //   }
-  // }
-
-  // changeDisplayInputForm = () => {
-  //   this.setState({
-  //     displayInputForm: !this.state.displayInputForm
-  //   })
-  // }
+  
 
   checkAlert = () => {
     if(this.props.requestSent===true){
