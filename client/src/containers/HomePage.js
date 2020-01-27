@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import Camera from '../components/cameras/Camera.js';
 import { connect } from 'react-redux'
-import Container from 'react-bootstrap/Container'
-import DisplayAlert from '../components/header/DisplayAlert.js'
+import Container from 'react-bootstrap/Container''
 import Spinner from 'react-bootstrap/Spinner'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button';
-
 
 class HomePage extends Component {
   render() {
