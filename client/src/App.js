@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import HeaderContainer from './containers/HeaderContainer.js'
 import CamerasContainer from './containers/CamerasContainer.js'
-import Container from 'react-bootstrap/Container'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import InputForm from './containers/InputForm.js'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import HomePage from './containers/HomePage.js'
 
 class App extends Component {
