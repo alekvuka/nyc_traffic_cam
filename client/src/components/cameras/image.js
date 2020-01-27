@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 //import Image from 'react-bootstrap/Image';
-import Card from 'react-bootstrap/Card'
 
 class Image extends Component {
 
