@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const RequestButton = props => {
 
-
   return (
     <NavLink to="/request"><Button variant="warning" onClick={props.displayInputForm}>request new avenues</Button></NavLink>
   );

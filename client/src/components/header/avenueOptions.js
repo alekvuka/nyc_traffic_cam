@@ -20,5 +20,4 @@ const AvenueOptions = props => {
  );
 }
 
-
 export default AvenueOptions
