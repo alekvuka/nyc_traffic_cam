@@ -11,6 +11,7 @@ import DisplayAlert from '../components/header/DisplayAlert.js'
 import { Redirect } from "react-router";
 
 
+
 class HeaderContainer extends Component {
 
   checkAlert = () => {

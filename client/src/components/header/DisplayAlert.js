@@ -42,7 +42,6 @@ class DisplayAlert extends Component {
   componentWillUnmount(){
     clearInterval(this.timerID)
   }
-
 };
 
 export default DisplayAlert;
