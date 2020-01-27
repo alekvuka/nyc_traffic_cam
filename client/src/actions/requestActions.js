@@ -1,7 +1,5 @@
 export const postRequest = (req) => {
 
-
-
    return (dispatch) => {
      dispatch({ type: 'SENDING_REQUEST'})
      fetch(`/request`, {

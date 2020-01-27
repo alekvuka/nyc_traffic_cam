@@ -10,15 +10,13 @@ import { postRequest } from '../actions/requestActions'
 import DisplayAlert from '../components/header/DisplayAlert.js'
 import { Redirect } from "react-router";
 
-
-
 class HeaderContainer extends Component {
 
   checkAlert = () => {
     if(this.props.requestSent===true){
       this.props.requestConfirmationSeen()
       const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
-      return  (<div><DisplayAlert text={txt} /> <Redirect to="/" /></div>)
+      return  (<div><DisplayAlert text={txt} /> <Redirect to="/" /> </div>)
     }
   }
 

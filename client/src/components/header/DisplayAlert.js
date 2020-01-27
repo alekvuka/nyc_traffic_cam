@@ -16,31 +16,32 @@ class DisplayAlert extends Component {
     })
   }
 
-  shouldDisplay = () => {
-    if(this.state.userSaw === false){
-      debugger
-      return <Alert variant={'warning'}> {this.props.text}</Alert>
-    }else{
-      return <div></div>
-    }
-  }
+  // shouldDisplay = () => {
+  //   if(this.state.userSaw === false){
+  //     debugger
+  //     return
+  //   }else{
+  //     return <div></div>
+  //   }
+  // }
 
   render(){
     return(
       <div>
-          {this.shouldDisplay()}
+      <Alert variant={'warning'}> {this.props.text}</Alert>
+
       </div>
     )}
 
   componentDidMount(){
-    this.timerID = setInterval(
-      () => this.resetSubmission(),
-      2000
-    );
+    // this.timerID = window.setTimeout(
+    //   () => this.setState({userSaw: false}),
+    //   2000
+    // );
   }
 
   componentWillUnmount(){
-    clearInterval(this.timerID)
+    //clearInterval(this.timerID)
   }
 };
 
