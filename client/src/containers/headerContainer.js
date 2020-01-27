@@ -13,8 +13,6 @@ import { Redirect } from "react-router";
 
 class HeaderContainer extends Component {
 
-  
-
   checkAlert = () => {
     if(this.props.requestSent===true){
       this.props.requestConfirmationSeen()
@@ -36,8 +34,6 @@ class HeaderContainer extends Component {
     )
   }
 
-//{//this.checkInputForm()}
-
   componentDidMount(){
      this.props.fetchAvenues()
   }
@@ -54,8 +50,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   requestConfirmationSeen: () => dispatch ({type: "REQUEST_CONFIRMATION_SEEN"}),
-  displayInput: () => dispatch( {type: "SET_DISPLAY_TO_TRUE"}),
-  hideInput: () => dispatch( {type: "SET_DISPLAY_TO_FALSE"}),
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues()),

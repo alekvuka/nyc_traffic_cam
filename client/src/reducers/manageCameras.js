@@ -29,18 +29,6 @@ export default function ManageCameras(state = {
         loading: false
       }
 
-    case "SET_DISPLAY_TO_FALSE":
-      return {
-        ...state,
-        displayInputForm: false
-      }
-
-    case "SET_DISPLAY_TO_TRUE":
-      return {
-        ...state,
-        displayInputForm: true
-      }
-
     case 'REQUEST_SENT':
       return {
         ...state,
