@@ -9,8 +9,7 @@ export default function ManageCameras(state = {
         avenues: action.avenues,
         loading: false,
         requestSent: false,
-        requestCreated: "",
-        displayInputForm: true
+        requestCreated: ""
       }
 
      case 'ADD_CAMERAS':
@@ -18,7 +17,6 @@ export default function ManageCameras(state = {
        ...state,
        cameras: action.cameras,
        loading: false,
-       displayInputForm: false
      }
 
      case 'REMOVE_CAMERA':
@@ -46,7 +44,6 @@ export default function ManageCameras(state = {
       return {
         ...state,
         cameras: [],
-        loading: false,
         displayInputForm: false
       }
 
