@@ -9,13 +9,10 @@ import Button from 'react-bootstrap/Button';
 
 
 class HomePage extends Component {
-
   render() {
     return (
       <Container fluid>
-
           <Card className="text-center" bg="dark" text="white">
-
               <Card.Header></Card.Header>
               <Card.Body>
                 <Card.Title>Welcome to NYC Traffic Cams!</Card.Title>
@@ -24,7 +21,6 @@ class HomePage extends Component {
                   Each avenue is organized from uptown to downtown. We are constantly adding cameras,please feel free to request new streets/avenues though the link above. Happy motoring in the Big Apple :)
                 </Card.Text>
                 <Spinner animation="grow" variant="danger" />
-
               </Card.Body>
               <Card.Footer className="text-muted">The cameras are maintaned by NYC DOT and other NYC city agencies!</Card.Footer>
           </Card>
