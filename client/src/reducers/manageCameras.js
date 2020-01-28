@@ -14,7 +14,6 @@ export default function ManageCameras(state = {
      return {
        ...state,
        cameras: action.cameras,
-       loading: false,
      }
 
      case 'REMOVE_CAMERA':
@@ -22,29 +21,28 @@ export default function ManageCameras(state = {
       return {
         ...state,
         cameras: cams,
-        loading: false
       }
 
-    case 'REQUEST_SENT':
-      return {
-        ...state,
-        requestCreated: action.data,
-      }
+      case 'REQUEST_SENT':
+        return {
+          ...state,
+          requestCreated: action.data,
+        }
 
-    case "REQUEST_ALERT_SEEN":
-      return {
-        ...state,
-        requestCreated: ""
-      }
+      case "REQUEST_ALERT_SEEN":
+        return {
+          ...state,
+          requestCreated: ""
+        }
 
-     case 'RESET':
-      return {
-        ...state,
-        cameras: [],
-        displayInputForm: false
-      }
+       case 'RESET':
+        return {
+          ...state,
+          cameras: [],
+          displayInputForm: false
+        }
 
-     default:
-      return state;
+       default:
+        return state;
    }
 };
