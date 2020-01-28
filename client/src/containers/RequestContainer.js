@@ -30,7 +30,6 @@ class Request extends Component {
 
   checkAlert = () => {
     if(this.props.requestCreated){
-      //debugger 
       const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
       return  (<div><DisplayAlert text={txt} redirect={this.setRedirect}/> </div> )
     }
