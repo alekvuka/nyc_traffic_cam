@@ -3,8 +3,6 @@ import Camera from '../components/cameras/Camera.js';
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import DisplayAlert from '../components/DisplayAlert.js'
-//import DisplayAlert from '../components/header/DisplayAlert.js'
-
 
 class CamerasContainer extends Component {
 

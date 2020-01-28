@@ -13,7 +13,6 @@ import thunk from 'redux-thunk';
 
 const store = createStore(ManageCameras, applyMiddleware(thunk))
 
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

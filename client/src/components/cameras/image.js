@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import Image from 'react-bootstrap/Image';
 
 class Image extends Component {
 
@@ -16,13 +15,11 @@ class Image extends Component {
         })
     }
 
-
   componentDidMount() {
     this.timerID = setInterval(
       () => this.updateImage(),
       1000
     );
-
   }
 
   componentWillUnmount() {

@@ -6,8 +6,6 @@ import { fetchAvenues } from '../actions/avenueActions'
 import { fetchCameras } from '../actions/cameraActions'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import RequestButton from '../components/header/RequestButton.js'
-import { postRequest } from '../actions/requestActions'
-import { Redirect } from "react-router";
 
 class HeaderContainer extends Component {
 
@@ -31,18 +29,14 @@ class HeaderContainer extends Component {
 const mapStateToProps = state => {
   return {
     avenues: state.avenues,
-    requestSent: state.requestSent,
-    requestCreated: state.requestCreated,
-    displayForm: state.displayInputForm
+    requestCreated: state.requestCreated
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  requestConfirmationSeen: () => dispatch ({type: "REQUEST_CONFIRMATION_SEEN"}),
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
   reset: () => dispatch({ type: "RESET"}),
   fetchAvenues: () => dispatch(fetchAvenues()),
-  postRequest: (request) => dispatch(postRequest(request))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)

@@ -7,7 +7,6 @@ import { Redirect } from "react-router";
 
 class Request extends Component {
 
-
   constructor(props){
     super(props)
     this.state = {
@@ -24,7 +23,7 @@ class Request extends Component {
   checkRedirect = () => {
     if(this.state.redirect){
       this.props.requestAlertSeen(true)
-      return <Redirect />
+      return <Redirect to="/" />
     }
   }
 
