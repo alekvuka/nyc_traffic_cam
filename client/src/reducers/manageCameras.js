@@ -7,10 +7,7 @@ export default function ManageCameras(state = {
       return {
         ...state,
         avenues: action.avenues,
-        loading: false,
-        requestSent: false,
-        requestCreated: "",
-        requestAlertSeen: false
+        requestCreated: ""
       }
 
      case 'ADD_CAMERAS':
@@ -32,14 +29,11 @@ export default function ManageCameras(state = {
       return {
         ...state,
         requestCreated: action.data,
-        requestSent: true,
-        requestAlertSeen: false
       }
 
     case "REQUEST_ALERT_SEEN":
       return {
         ...state,
-        requestAlertSeen: true,
         requestCreated: ""
       }
 
