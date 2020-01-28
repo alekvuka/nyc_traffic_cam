@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 class AvenueRequestForm extends Component {
 
@@ -40,18 +42,24 @@ class AvenueRequestForm extends Component {
   render() {
     return (
       <Container fluid>
-          <Card bg="light" text="white" style={{ width: '50em' }}>
-          <Form onSubmit={(event) => this.handleOnSubmit(event)}>
-            <Form.Group >
-              <Form.Label> </Form.Label>
-              <Form.Control id="email" onChange={this.handleOnChange} placeholder="email" />
-            </Form.Group>
-            <Form.Group >
-              <Form.Label></Form.Label>
-              <Form.Control id="request" onChange={this.handleOnChange} placeholder="avenue" />
-            </Form.Group>
-            <Button variant="warning" type="submit">Submit</Button>
-         </Form>
+          <Card bg="light" text="white" style={{ width: '36em' }}>
+
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+              <InputGroup.Text id="basic-addon1">email -> </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl id="email" onChange={this.handleOnChange} placeholder="" aria-label="Username" aria-describedby="basic-addon1"/>
+            </InputGroup>
+
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+              <InputGroup.Text id="basic-addon1">Ave. Request -> </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl id="request" onChange={this.handleOnChange} placeholder="" aria-label="Username" aria-describedby="basic-addon1"/>
+            </InputGroup>
+
+            <Button variant="warning" type="submit" onClick={(event) => this.handleOnSubmit(event)}>Send Request</Button>
+
           </Card>
       </Container>
   )}
