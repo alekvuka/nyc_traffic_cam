@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 
 class AvenueRequestForm extends Component {
 
@@ -37,19 +39,22 @@ class AvenueRequestForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <Form.Group >
-          <Form.Label>Enter your email </Form.Label>
-          <Form.Control id="email" onChange={this.handleOnChange} placeholder="email" />
-        </Form.Group>
-        <Form.Group >
-          <Form.Label>Enter your avenue request</Form.Label>
-          <Form.Control id="request" onChange={this.handleOnChange} placeholder="avenue" />
-        </Form.Group>
-        <Button variant="primary" type="submit">Submit</Button>
-     </Form>
-    )
-  }
+      <Container fluid>
+          <Card bg="light" text="white" style={{ width: '50em' }}>
+          <Form onSubmit={(event) => this.handleOnSubmit(event)}>
+            <Form.Group >
+              <Form.Label> </Form.Label>
+              <Form.Control id="email" onChange={this.handleOnChange} placeholder="email" />
+            </Form.Group>
+            <Form.Group >
+              <Form.Label></Form.Label>
+              <Form.Control id="request" onChange={this.handleOnChange} placeholder="avenue" />
+            </Form.Group>
+            <Button variant="warning" type="submit">Submit</Button>
+         </Form>
+          </Card>
+      </Container>
+  )}
 }
 
 export default AvenueRequestForm
