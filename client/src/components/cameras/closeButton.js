@@ -5,7 +5,7 @@ const CloseButton = props => {
 
   return (
     <div>
-      <Button className="fixed-right" variant="danger" onClick={() => props.removeCam(props.id)}>X</Button>
+      <Button className="fixed-right" bg="primary" onClick={() => props.removeCam(props.id)}>X</Button>
     </div>
   );
 };

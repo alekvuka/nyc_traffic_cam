@@ -7,18 +7,18 @@ import { fetchCameras } from '../actions/cameraActions'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import RequestButton from '../components/header/RequestButton.js'
 import { postRequest } from '../actions/requestActions'
-import DisplayAlert from '../components/header/DisplayAlert.js'
+//import DisplayAlert from '../components/header/DisplayAlert.js'
 import { Redirect } from "react-router";
 
 class HeaderContainer extends Component {
 
-  checkAlert = () => {
-    if(this.props.requestSent===true){
-      this.props.requestConfirmationSeen()
-      const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
-      return  (<div><DisplayAlert text={txt} /> <Redirect to="/" /> </div>)
-    }
-  }
+  // checkAlert = () => {
+  //   if(this.props.requestSent===true){
+  //     this.props.requestConfirmationSeen()
+  //     const txt = `Your request for ${this.props.requestCreated.text} was sucsefully submitted!`
+  //     return  (<div><DisplayAlert text={txt} /> <Redirect to="/" /> </div>)
+  //   }
+  // }
 
   render() {
     return (
@@ -28,10 +28,12 @@ class HeaderContainer extends Component {
           <ResetButton reset={this.handleOnClick} />
           <RequestButton displayInputForm={this.changeDisplayInputForm}/>
         </ButtonToolbar>
-        {this.checkAlert()}
+
       </div>
     )
   }
+
+    //{this.checkAlert()}
 
   componentDidMount(){
      this.props.fetchAvenues()
