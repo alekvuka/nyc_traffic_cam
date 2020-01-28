@@ -10,7 +10,7 @@ class Camera extends Component {
     return (
       <Jumbotron>
            <Description text={this.props.description} />
-           <CloseButton text={this.props.description} closeCam={this.props.closeCam} camera={this.props}  />
+           <CloseButton text={this.props.description} variant={this.props.variant} closeCam={this.props.closeCam} camera={this.props}  />
            <Image url={this.props.url} desc={this.props.description} />
      </Jumbotron>
     )

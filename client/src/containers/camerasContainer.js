@@ -31,14 +31,14 @@ class CamerasContainer extends Component {
   checkDeletionAlert = () => {
     if(this.state.cameraDeleted){
       const txt = `Removed camera ${this.state.cameraDeleted}!`
-      return  (<DisplayAlert text={txt} redirect={this.resetCameraDeleted}/> )
+      return  (<DisplayAlert variant="primary" text={txt} redirect={this.resetCameraDeleted}/> )
     }
   }
 
 
   renderCameras = () => {
     const cams = this.props.cameras.map((camera, index) => {
-       return <Camera key={index} description={camera.description} url={camera.url} closeCam={this.closeButtonClicked}  />
+       return <Camera key={index} variant="primary" description={camera.description} url={camera.url} closeCam={this.closeButtonClicked}  />
     })
     return cams
   }

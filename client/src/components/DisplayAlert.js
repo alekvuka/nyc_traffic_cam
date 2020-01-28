@@ -10,7 +10,7 @@ class DisplayAlert extends Component {
   render(){
     return(
       <div>
-        <Alert variant={'warning'}> {this.props.text}</Alert>
+        <Alert variant={this.props.variant}> {this.props.text}</Alert>
       </div>
     )}
 

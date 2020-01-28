@@ -13,8 +13,8 @@ class HomePage extends Component {
               <Card.Body>
                 <Card.Title>Welcome to NYC Traffic Cams!</Card.Title>
                 <Card.Text>
-                  Nothing beats live cameras if you want to find out traffic conditions. That's why we created a database of cameras distributing a live feed of the city's roadways.
-                  Each avenue is organized from uptown to downtown. We are constantly adding cameras,please feel free to request new streets/avenues though the link above. Happy motoring in the Big Apple :)
+                  Nothing beats live cameras if you want to find out traffic conditions. That's why I've created a database of cameras distributing a live feed of the city's roadways.
+                  Each avenue is organized from uptown to downtown. I'm constantly adding cameras,please feel free to request new streets/avenues though the link above. Happy motoring in the Big Apple :)
                 </Card.Text>
                 <Spinner animation="grow" variant="danger" />
               </Card.Body>
