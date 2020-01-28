@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { postRequest } from '../actions/requestActions'
 import AvenueRequestForm from '../components/request/AvenueRequestForm.js'
 
-class InputForm extends Component {
+class Request extends Component {
 
   render() {
         return (
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   postRequest: (request) => dispatch(postRequest(request))
 })
 
-export default connect(null, mapDispatchToProps)(InputForm)
+export default connect(null, mapDispatchToProps)(Request)
