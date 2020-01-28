@@ -15,4 +15,8 @@ export const postRequest = (req) => {
          console.error('Error:', error);
        });
    }
-  }
+ }
+
+export const reset = () => {
+   return {action: "RESET"}
+ }

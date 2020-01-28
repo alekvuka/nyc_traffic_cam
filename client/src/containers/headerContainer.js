@@ -4,6 +4,7 @@ import ResetButton from '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
 import { fetchAvenues } from '../actions/avenueActions'
 import { fetchCameras } from '../actions/cameraActions'
+import {reset} from '../actions/requestActions.js'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import RequestButton from '../components/header/RequestButton.js'
 
@@ -22,7 +23,9 @@ class HeaderContainer extends Component {
   }
 
   componentDidMount(){
+    console.log("a")
      this.props.fetchAvenues()
+     console.log("b")
   }
 }
 
@@ -35,7 +38,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchCameras: (avenue) => dispatch(fetchCameras(avenue)),
-  reset: () => dispatch({ type: "RESET"}),
+  //reset: () => dispatch({ type: "RESET"}),
+  reset: () => dispatch(reset()),
   fetchAvenues: () => dispatch(fetchAvenues()),
 })
 

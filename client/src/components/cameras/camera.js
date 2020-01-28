@@ -3,7 +3,7 @@ import Description from './Description.js'
 import CloseButton from './CloseButton.js'
 import Image from './Image.js'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-
+import Favorite from './Favorite.js'
 class Camera extends Component {
 
   render() {
@@ -17,4 +17,5 @@ class Camera extends Component {
   }
 }
 
+//<Favorite />
 export default Camera
