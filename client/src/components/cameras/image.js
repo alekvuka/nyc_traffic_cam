@@ -7,6 +7,7 @@ class Image extends Component {
     this.state = {
       url: props.url + Math.random()
     }
+    
   }
 
   updateImage = () => {

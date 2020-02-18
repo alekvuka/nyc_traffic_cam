@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AvenueOptions from '../components/header/AvenueOptions.js';
+import AvenueOptions from '../components/header/avenueOptions.js';
 import ResetButton from '../components/header/ResetButton.js';
 import { connect } from 'react-redux'
 import { fetchAvenues } from '../actions/avenueActions'
