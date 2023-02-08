@@ -12,5 +12,4 @@ class CamerasController < ApplicationController
     render json: @cameras, only: [:description, :url]
   end
 
-
 end
